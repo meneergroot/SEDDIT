@@ -1,416 +1,402 @@
-/* Mobile First Responsive Design */
+/* ===== MOBILE-FIRST RESPONSIVE DESIGN ===== */
 
-/* Extra Small devices (phones, 320px and up) */
-@media (max-width: 575.98px) {
+/* Base mobile styles (320px and up) */
+@media (min-width: 320px) {
     .app-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr auto;
-        min-height: 100vh;
-    }
-
-    .sidebar {
-        position: fixed;
-        z-index: 100;
-        height: 100vh;
-        transform: translateX(-100%);
-        transition: transform var(--transition-normal);
-    }
-
-    .sidebar.mobile-open {
-        transform: translateX(0);
-    }
-
-    .left-sidebar {
-        left: 0;
-        width: 280px;
-        max-width: 85vw;
-    }
-
-    .right-sidebar {
-        right: 0;
-        width: 280px;
-        max-width: 85vw;
-        transform: translateX(100%);
-    }
-
-    .right-sidebar.mobile-open {
-        transform: translateX(0);
-    }
-
-    .main-content {
-        border-right: none;
-        min-height: calc(100vh - 60px);
-    }
-
-    .main-header {
-        position: sticky;
-        top: 0;
-        padding: var(--spacing-md);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: var(--background-color);
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .main-header h1 {
-        font-size: var(--font-size-lg);
-    }
-
-    .mobile-menu-toggle {
-        display: block;
-        background: none;
-        border: none;
-        color: var(--text-primary);
-        font-size: var(--font-size-lg);
-        cursor: pointer;
-        padding: var(--spacing-sm);
-    }
-
-    .tweet-composer {
-        padding: var(--spacing-md);
-    }
-
-    .composer-header {
-        gap: var(--spacing-sm);
-    }
-
-    .user-avatar {
-        width: 32px;
-        height: 32px;
-    }
-
-    #tweet-text {
-        min-height: 100px;
-        font-size: var(--font-size-base);
-    }
-
-    .composer-footer {
-        flex-direction: column;
-        gap: var(--spacing-sm);
-        align-items: stretch;
-    }
-
-    .tweet {
-        padding: var(--spacing-md);
-    }
-
-    .tweet-avatar {
-        width: 40px;
-        height: 40px;
-    }
-
-    .tweet-actions {
         max-width: 100%;
-        justify-content: space-around;
+        margin: 0;
     }
-
-    .tweet-action {
-        padding: var(--spacing-xs);
-        font-size: var(--font-size-xs);
+    
+    .main-content {
+        padding-bottom: 80px; /* Space for bottom navigation */
     }
-
-    .tweet-action i {
-        font-size: var(--font-size-base);
+    
+    .content-section {
+        min-height: calc(100vh - 120px);
     }
-
-    .logo span {
-        display: none;
-    }
-
-    .nav-item span {
-        display: none;
-    }
-
-    .wallet-section {
-        margin-bottom: var(--spacing-md);
-    }
-
-    .btn {
-        padding: var(--spacing-xs) var(--spacing-sm);
-        font-size: var(--font-size-xs);
-    }
-
-    .trending-section,
-    .wallet-info {
-        padding: var(--spacing-md);
-    }
-
-    .trending-item {
-        padding: var(--spacing-xs);
-    }
-
-    .toast-container {
-        top: var(--spacing-sm);
-        right: var(--spacing-sm);
-        left: var(--spacing-sm);
-        max-width: none;
-    }
-
-    .toast {
-        max-width: none;
-        font-size: var(--font-size-xs);
+    
+    /* Header adjustments for mobile */
+    .header-content {
         padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    .logo span {
+        display: none; /* Hide logo text on very small screens */
+    }
+    
+    .logo i {
+        font-size: var(--font-size-xl);
+    }
+    
+    /* Bottom navigation adjustments */
+    .bottom-nav {
+        padding: var(--spacing-xs) 0;
+    }
+    
+    .nav-item {
+        min-width: 50px;
+        padding: var(--spacing-xs);
+    }
+    
+    .nav-item span {
+        font-size: 10px;
+    }
+    
+    .nav-item i {
+        font-size: var(--font-size-base);
     }
 }
 
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-    .app-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr auto;
+/* Small mobile (375px and up) */
+@media (min-width: 375px) {
+    .logo span {
+        display: inline; /* Show logo text */
     }
-
-    .sidebar {
-        position: fixed;
-        z-index: 100;
-        height: 100vh;
-        transform: translateX(-100%);
-        transition: transform var(--transition-normal);
+    
+    .nav-item {
+        min-width: 60px;
+        padding: var(--spacing-sm);
     }
-
-    .sidebar.mobile-open {
-        transform: translateX(0);
+    
+    .nav-item span {
+        font-size: var(--font-size-xs);
     }
+}
 
-    .left-sidebar {
-        left: 0;
-        width: 300px;
+/* Medium mobile (480px and up) */
+@media (min-width: 480px) {
+    .header-content {
+        padding: var(--spacing-md) var(--spacing-lg);
     }
-
-    .right-sidebar {
-        right: 0;
-        width: 300px;
-        transform: translateX(100%);
-    }
-
-    .right-sidebar.mobile-open {
-        transform: translateX(0);
-    }
-
-    .main-content {
-        border-right: none;
-    }
-
+    
     .tweet-composer {
         padding: var(--spacing-lg);
     }
-
+    
+    .composer-header {
+        gap: var(--spacing-md);
+    }
+    
+    .user-avatar {
+        width: 40px;
+        height: 40px;
+    }
+    
     .composer-footer {
         flex-direction: row;
         align-items: center;
     }
-
-    .tweet-actions {
-        max-width: 100%;
-        justify-content: space-around;
-    }
-
-    .toast-container {
-        max-width: 350px;
-    }
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .app-container {
-        grid-template-columns: 250px 1fr;
-    }
-
-    .right-sidebar {
-        display: none;
-    }
-
-    .main-content {
-        border-right: none;
-    }
-
-    .tweet-composer {
+    
+    .tweet-card {
         padding: var(--spacing-lg);
+        gap: var(--spacing-md);
     }
-
-    .tweet-actions {
-        max-width: 100%;
-        justify-content: space-around;
+    
+    .tweet-avatar {
+        width: 48px;
+        height: 48px;
     }
-
-    .nav-item span {
-        display: none;
-    }
-
-    .logo span {
-        display: none;
-    }
-
-    .wallet-section {
-        margin-bottom: var(--spacing-md);
-    }
-
-    .btn {
-        padding: var(--spacing-sm);
-        font-size: var(--font-size-xs);
-    }
-
-    .btn span {
-        display: none;
-    }
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-    .app-container {
-        grid-template-columns: 250px 1fr 300px;
-    }
-
+    
     .tweet-actions {
         max-width: 400px;
     }
-
-    .nav-item span {
-        display: inline;
+    
+    .tweet-action {
+        flex: 0 1 auto;
     }
-
-    .logo span {
-        display: inline;
+    
+    .wallet-card {
+        padding: var(--spacing-lg);
     }
-
-    .btn span {
-        display: inline;
+    
+    .wallet-header {
+        flex-direction: row;
+        text-align: left;
+    }
+    
+    .wallet-actions {
+        flex-direction: row;
+    }
+    
+    .toast-container {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 400px;
+        max-width: 90vw;
     }
 }
 
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+/* Large mobile (640px and up) */
+@media (min-width: 640px) {
     .app-container {
-        grid-template-columns: 275px 1fr 350px;
-        max-width: 1400px;
+        max-width: 640px;
+        margin: 0 auto;
+        border-left: 1px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
     }
-
-    .tweet-actions {
-        max-width: 425px;
-    }
-}
-
-/* Mobile Navigation Overlay */
-.mobile-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 99;
-    opacity: 0;
-    visibility: hidden;
-    transition: all var(--transition-normal);
-}
-
-.mobile-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Mobile Menu Button */
-.mobile-menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--text-primary);
-    font-size: var(--font-size-lg);
-    cursor: pointer;
-    padding: var(--spacing-sm);
-    border-radius: var(--border-radius-md);
-    transition: background-color var(--transition-fast);
-}
-
-.mobile-menu-toggle:hover {
-    background-color: var(--surface-color);
-}
-
-/* Mobile Header */
-.mobile-header {
-    display: none;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background-color: var(--background-color);
-    border-bottom: 1px solid var(--border-color);
-    padding: var(--spacing-md);
-    backdrop-filter: blur(10px);
-}
-
-.mobile-header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.mobile-header-title {
-    font-size: var(--font-size-lg);
-    font-weight: 700;
-    color: var(--text-primary);
-}
-
-.mobile-header-actions {
-    display: flex;
-    gap: var(--spacing-sm);
-}
-
-/* Responsive Typography */
-@media (max-width: 575.98px) {
-    :root {
-        --font-size-xs: 0.7rem;
-        --font-size-sm: 0.8rem;
-        --font-size-base: 0.9rem;
-        --font-size-lg: 1rem;
-        --font-size-xl: 1.1rem;
-        --font-size-2xl: 1.3rem;
-        --font-size-3xl: 1.5rem;
-    }
-}
-
-/* Responsive Spacing */
-@media (max-width: 575.98px) {
-    :root {
-        --spacing-xs: 0.2rem;
-        --spacing-sm: 0.4rem;
-        --spacing-md: 0.8rem;
-        --spacing-lg: 1.2rem;
-        --spacing-xl: 1.6rem;
-        --spacing-2xl: 2.4rem;
-    }
-}
-
-/* Landscape Orientation Adjustments */
-@media (max-width: 767.98px) and (orientation: landscape) {
-    .sidebar {
-        height: 100vh;
-        overflow-y: auto;
-    }
-
+    
     .main-content {
+        padding-bottom: 0; /* Remove bottom padding on larger screens */
+    }
+    
+    .content-section {
+        min-height: calc(100vh - 80px); /* Account for header only */
+    }
+    
+    /* Hide bottom navigation on larger screens */
+    .bottom-nav {
+        display: none;
+    }
+    
+    /* Show section headers */
+    .section-header {
+        position: sticky;
+        top: 80px; /* Below header */
+        z-index: var(--z-sticky);
+        background-color: var(--bg-secondary);
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    /* Adjust feed layout */
+    #feed-section {
+        border-right: 1px solid var(--border-color);
+    }
+    
+    /* Show explore section inline */
+    #explore-section {
+        position: fixed;
+        top: 80px;
+        right: 0;
+        width: 300px;
+        height: calc(100vh - 80px);
+        overflow-y: auto;
+        background-color: var(--bg-primary);
+        border-left: 1px solid var(--border-color);
+        z-index: var(--z-dropdown);
+    }
+    
+    /* Adjust main content width */
+    .main-content {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+    }
+    
+    #feed-section,
+    #notifications-section,
+    #profile-section {
+        grid-column: 1;
+    }
+    
+    #explore-section {
+        grid-column: 2;
+        position: static;
+        width: auto;
+        height: auto;
+    }
+}
+
+/* Tablet (768px and up) */
+@media (min-width: 768px) {
+    .app-container {
+        max-width: 768px;
+    }
+    
+    /* Add left sidebar for navigation */
+    .app-container {
+        display: grid;
+        grid-template-columns: 250px 1fr 300px;
+        grid-template-rows: auto 1fr;
         min-height: 100vh;
     }
-
-    .tweet-composer {
-        padding: var(--spacing-sm) var(--spacing-md);
+    
+    .app-header {
+        grid-column: 1 / -1;
+        grid-row: 1;
     }
-
-    #tweet-text {
-        min-height: 80px;
+    
+    .main-content {
+        grid-column: 2;
+        grid-row: 2;
+        display: block;
+    }
+    
+    /* Add left navigation sidebar */
+    .app-container::before {
+        content: '';
+        grid-column: 1;
+        grid-row: 2;
+        background-color: var(--bg-primary);
+        border-right: 1px solid var(--border-color);
+        padding: var(--spacing-lg);
+    }
+    
+    /* Show navigation in left sidebar */
+    .left-nav {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 250px;
+        height: calc(100vh - 80px);
+        background-color: var(--bg-primary);
+        border-right: 1px solid var(--border-color);
+        padding: var(--spacing-lg);
+        overflow-y: auto;
+        z-index: var(--z-dropdown);
+    }
+    
+    .left-nav .nav-item {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-md);
+        padding: var(--spacing-md);
+        text-decoration: none;
+        color: var(--text-primary);
+        border-radius: var(--radius-lg);
+        transition: all var(--transition-fast);
+        font-weight: 500;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .left-nav .nav-item:hover {
+        background-color: var(--bg-secondary);
+        color: var(--primary-color);
+    }
+    
+    .left-nav .nav-item.active {
+        color: var(--primary-color);
+        font-weight: 600;
+    }
+    
+    .left-nav .nav-item i {
+        font-size: var(--font-size-lg);
+        width: 24px;
+        text-align: center;
+    }
+    
+    /* Adjust content sections */
+    .content-section {
+        min-height: auto;
+    }
+    
+    /* Show all sections in main content */
+    #explore-section {
+        position: static;
+        width: auto;
+        height: auto;
+        border-left: none;
     }
 }
 
-/* High DPI Displays */
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+    .app-container {
+        max-width: 1024px;
+    }
+    
+    /* Add more space for content */
+    .app-container {
+        grid-template-columns: 275px 1fr 350px;
+    }
+    
+    .left-nav {
+        width: 275px;
+    }
+    
+    #explore-section {
+        width: 350px;
+    }
+}
+
+/* Large desktop (1280px and up) */
+@media (min-width: 1280px) {
+    .app-container {
+        max-width: 1280px;
+    }
+    
+    /* Add more space for content */
+    .app-container {
+        grid-template-columns: 300px 1fr 400px;
+    }
+    
+    .left-nav {
+        width: 300px;
+    }
+    
+    #explore-section {
+        width: 400px;
+    }
+}
+
+/* Extra large desktop (1536px and up) */
+@media (min-width: 1536px) {
+    .app-container {
+        max-width: 1536px;
+    }
+    
+    /* Add more space for content */
+    .app-container {
+        grid-template-columns: 325px 1fr 450px;
+    }
+    
+    .left-nav {
+        width: 325px;
+    }
+    
+    #explore-section {
+        width: 450px;
+    }
+}
+
+/* ===== LANDSCAPE ORIENTATION ===== */
+@media (orientation: landscape) and (max-height: 600px) {
+    .app-header {
+        position: relative;
+    }
+    
+    .main-content {
+        padding-bottom: 0;
+    }
+    
+    .content-section {
+        min-height: auto;
+    }
+    
+    .bottom-nav {
+        position: relative;
+        border-top: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+}
+
+/* ===== HIGH DPI DISPLAYS ===== */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     .user-avatar,
-    .tweet-avatar {
+    .tweet-avatar,
+    .profile-avatar {
         image-rendering: -webkit-optimize-contrast;
         image-rendering: crisp-edges;
     }
 }
 
-/* Reduced Motion */
+/* ===== DARK MODE PREFERENCES ===== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #15202b;
+        --bg-secondary: #192734;
+        --bg-tertiary: #253341;
+        --bg-card: #192734;
+        --bg-overlay: rgba(0, 0, 0, 0.7);
+        
+        --text-primary: #ffffff;
+        --text-secondary: #8899a6;
+        --text-muted: #657786;
+        
+        --border-color: #38444d;
+        --border-hover: #4a5568;
+    }
+}
+
+/* ===== REDUCED MOTION PREFERENCES ===== */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -418,48 +404,139 @@
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
-    }
-
-    .skeleton {
-        animation: none;
-        background: var(--surface-color);
+        scroll-behavior: auto !important;
     }
 }
 
-/* Dark Mode Media Query */
-@media (prefers-color-scheme: dark) {
+/* ===== HIGH CONTRAST MODE ===== */
+@media (prefers-contrast: high) {
     :root {
-        --background-color: #15202b;
-        --surface-color: #192734;
-        --border-color: #38444d;
-        --text-primary: #ffffff;
-        --text-secondary: #8899a6;
-        --text-muted: #657786;
+        --border-color: #000000;
+        --border-hover: #333333;
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+        --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    [data-theme="dark"] {
+        --border-color: #ffffff;
+        --border-hover: #cccccc;
     }
 }
 
-/* Print Styles */
+/* ===== PRINT STYLES ===== */
 @media print {
-    .sidebar,
-    .mobile-menu-toggle,
+    .app-header,
+    .bottom-nav,
+    .left-nav,
     .tweet-actions,
     .composer-footer,
-    .loading-overlay,
+    .wallet-actions,
     .toast-container {
         display: none !important;
     }
-
+    
     .app-container {
-        grid-template-columns: 1fr;
-        max-width: none;
+        display: block !important;
+        max-width: none !important;
+        border: none !important;
     }
-
+    
     .main-content {
-        border: none;
+        padding: 0 !important;
+        display: block !important;
     }
+    
+    .content-section {
+        display: block !important;
+        min-height: auto !important;
+        page-break-inside: avoid;
+    }
+    
+    .tweet-card {
+        border: 1px solid #000 !important;
+        margin-bottom: var(--spacing-md) !important;
+        page-break-inside: avoid;
+    }
+    
+    .tweet-text {
+        color: #000 !important;
+    }
+    
+    .tweet-author {
+        color: #000 !important;
+    }
+    
+    .tweet-username,
+    .tweet-timestamp {
+        color: #666 !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}
 
-    .tweet {
-        break-inside: avoid;
-        border-bottom: 1px solid #ccc;
+/* ===== ACCESSIBILITY IMPROVEMENTS ===== */
+
+/* Focus visible for keyboard navigation */
+@media (any-hover: none) {
+    .btn:hover,
+    .nav-item:hover,
+    .tweet-action:hover,
+    .trending-item:hover {
+        background-color: transparent;
+        transform: none;
+    }
+}
+
+/* Large text support */
+@media (prefers-reduced-data: reduce) {
+    .user-avatar,
+    .tweet-avatar,
+    .profile-avatar {
+        display: none;
+    }
+    
+    .logo i {
+        display: none;
+    }
+}
+
+/* ===== GITHUB PAGES SPECIFIC ===== */
+
+/* Ensure proper base path for GitHub Pages */
+@media (min-width: 320px) {
+    /* Add any GitHub Pages specific styles here */
+    .app-container {
+        /* Ensure proper rendering on GitHub Pages */
+        contain: layout style paint;
+    }
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+
+/* Optimize for low-end devices */
+@media (max-width: 480px) and (max-device-memory: 512MB) {
+    .tweet-card {
+        contain: layout style;
+    }
+    
+    .tweet-avatar,
+    .user-avatar,
+    .profile-avatar {
+        will-change: transform;
+    }
+}
+
+/* Optimize for slow connections */
+@media (prefers-reduced-data: reduce) {
+    .tweet-card {
+        contain: layout style;
+    }
+    
+    .toast {
+        contain: layout style;
     }
 } 

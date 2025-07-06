@@ -23,8 +23,8 @@
     <meta property="twitter:image" content="https://yourusername.github.io/SEDDIT/assets/og-image.png">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/main.css">
@@ -39,7 +39,7 @@
     
     <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#1da1f2">
+    <meta name="theme-color" content="#9945FF">
 </head>
 <body>
     <!-- App Container -->
@@ -47,52 +47,26 @@
         <!-- Header -->
         <header class="app-header">
             <div class="header-content">
-                <div class="logo">
+                <button class="avatar-btn" id="topbar-avatar" aria-label="Profile">
+                    <img src="https://via.placeholder.com/40" alt="User Avatar" class="user-avatar">
+                </button>
+                <div class="logo centered-logo">
                     <i class="fas fa-rocket"></i>
-                    <span>SEDDIT</span>
-                </div>
-                
-                <div class="header-actions">
-                    <button id="theme-toggle" class="btn btn-icon" aria-label="Toggle theme">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                    
-                    <button id="wallet-connect" class="btn btn-primary btn-sm">
-                        <i class="fas fa-wallet"></i>
-                        <span>Connect</span>
-                    </button>
                 </div>
             </div>
         </header>
+
+        <!-- Tab Navigation -->
+        <nav class="tab-nav">
+            <button class="tab-item active" data-tab="foryou">For you</button>
+            <button class="tab-item" data-tab="following">Following</button>
+            <button class="tab-item" data-tab="subscribed">Subscribed</button>
+        </nav>
 
         <!-- Main Content -->
         <main class="main-content">
             <!-- Feed Section -->
             <section id="feed-section" class="content-section active">
-                <!-- Tweet Composer -->
-                <div class="tweet-composer">
-                    <div class="composer-header">
-                        <img id="user-avatar" src="https://via.placeholder.com/40" alt="User Avatar" class="user-avatar">
-                        <div class="composer-content">
-                            <textarea 
-                                id="tweet-text" 
-                                placeholder="What's happening on Solana?" 
-                                maxlength="280"
-                                rows="3"
-                            ></textarea>
-                            <div class="composer-footer">
-                                <div class="char-count">
-                                    <span id="char-count">280</span>
-                                </div>
-                                <button id="post-tweet" class="btn btn-primary" disabled>
-                                    <i class="fas fa-paper-plane"></i>
-                                    <span>Post ($0.01)</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Tweet Feed -->
                 <div class="tweet-feed" id="tweet-feed">
                     <!-- Tweets will be dynamically loaded here -->
@@ -197,23 +171,24 @@
             </section>
         </main>
 
+        <!-- Floating Action Button (FAB) -->
+        <button class="fab" id="fab-compose" aria-label="Compose Tweet">
+            <i class="fas fa-plus"></i>
+        </button>
+
         <!-- Bottom Navigation -->
         <nav class="bottom-nav">
-            <button class="nav-item active" data-section="feed-section">
+            <button class="nav-item active" data-section="feed-section" aria-label="Home">
                 <i class="fas fa-home"></i>
-                <span>Home</span>
             </button>
-            <button class="nav-item" data-section="explore-section">
-                <i class="fas fa-hashtag"></i>
-                <span>Explore</span>
+            <button class="nav-item" data-section="explore-section" aria-label="Explore">
+                <i class="fas fa-search"></i>
             </button>
-            <button class="nav-item" data-section="notifications-section">
+            <button class="nav-item" data-section="notifications-section" aria-label="Notifications">
                 <i class="fas fa-bell"></i>
-                <span>Notifications</span>
             </button>
-            <button class="nav-item" data-section="profile-section">
+            <button class="nav-item" data-section="profile-section" aria-label="Profile">
                 <i class="fas fa-user"></i>
-                <span>Profile</span>
             </button>
         </nav>
     </div>

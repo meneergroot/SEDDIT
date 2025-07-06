@@ -7,44 +7,36 @@
     <meta name="description" content="Decentralized social media platform on Solana blockchain">
     <meta name="keywords" content="Solana, Social Media, Web3, Blockchain, DeFi">
     <meta name="author" content="SEDDIT Team">
-    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourusername.github.io/SEDDIT/">
+    <meta property="og:url" content="https://meneergroot.github.io/SEDDIT/">
     <meta property="og:title" content="SEDDIT - Solana Social Media">
     <meta property="og:description" content="Decentralized social media platform on Solana blockchain">
-    <meta property="og:image" content="https://yourusername.github.io/SEDDIT/assets/og-image.png">
-
+    <meta property="og:image" content="https://meneergroot.github.io/SEDDIT/assets/og-image.png">
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://yourusername.github.io/SEDDIT/">
+    <meta property="twitter:url" content="https://meneergroot.github.io/SEDDIT/">
     <meta property="twitter:title" content="SEDDIT - Solana Social Media">
     <meta property="twitter:description" content="Decentralized social media platform on Solana blockchain">
-    <meta property="twitter:image" content="https://yourusername.github.io/SEDDIT/assets/og-image.png">
-
+    <meta property="twitter:image" content="https://meneergroot.github.io/SEDDIT/assets/og-image.png">
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
     <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
-    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/responsive.css">
-    
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
     <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#9945FF">
 </head>
 <body>
-    <!-- App Container -->
     <div class="app-container">
-        <!-- Header -->
+        <!-- Top Bar -->
         <header class="app-header">
             <div class="header-content">
                 <button class="avatar-btn" id="topbar-avatar" aria-label="Profile">
@@ -55,29 +47,76 @@
                 </div>
             </div>
         </header>
-
         <!-- Tab Navigation -->
         <nav class="tab-nav">
             <button class="tab-item active" data-tab="foryou">For you</button>
             <button class="tab-item" data-tab="following">Following</button>
             <button class="tab-item" data-tab="subscribed">Subscribed</button>
         </nav>
-
         <!-- Main Content -->
         <main class="main-content">
             <!-- Feed Section -->
             <section id="feed-section" class="content-section active">
-                <!-- Tweet Feed -->
                 <div class="tweet-feed" id="tweet-feed">
-                    <!-- Tweets will be dynamically loaded here -->
+                    <!-- Example tweet cards -->
+                    <div class="tweet-card">
+                        <img class="tweet-avatar" src="https://via.placeholder.com/48" alt="Avatar">
+                        <div class="tweet-content">
+                            <div class="tweet-header">
+                                <span class="tweet-author">DogeDesigner</span>
+                                <span class="tweet-username">@cb_doge</span>
+                                <span class="tweet-timestamp">1h</span>
+                            </div>
+                            <div class="tweet-text">This is my first post on SEDDIT. Hello world.</div>
+                            <div class="tweet-actions">
+                                <button class="tweet-action"><i class="far fa-comment"></i> 9,190</button>
+                                <button class="tweet-action"><i class="fas fa-retweet"></i> 10.5K</button>
+                                <button class="tweet-action"><i class="far fa-heart"></i> 116K</button>
+                                <button class="tweet-action"><i class="far fa-eye"></i> 11.4M</button>
+                                <button class="tweet-action"><i class="fas fa-share"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tweet-card">
+                        <img class="tweet-avatar" src="https://via.placeholder.com/48" alt="Avatar">
+                        <div class="tweet-content">
+                            <div class="tweet-header">
+                                <span class="tweet-author">Michael Daly</span>
+                                <span class="tweet-username">@drmikeDO1943</span>
+                                <span class="tweet-timestamp">3h</span>
+                            </div>
+                            <div class="tweet-text">A grandson just texted: How is SEDDIT? Why do you think it’s newsworthy? My answer: It is panoply of views/comments and it is continuously updated. You immerse yourself in the ‘town square’ of discussion and come to your own conclusions about what is true.</div>
+                            <div class="tweet-actions">
+                                <button class="tweet-action"><i class="far fa-comment"></i> 3,194</button>
+                                <button class="tweet-action"><i class="fas fa-retweet"></i> 454</button>
+                                <button class="tweet-action"><i class="far fa-heart"></i> 113.1K</button>
+                                <button class="tweet-action"><i class="far fa-eye"></i> 13.6M</button>
+                                <button class="tweet-action"><i class="fas fa-share"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tweet-card">
+                        <img class="tweet-avatar" src="https://via.placeholder.com/48" alt="Avatar">
+                        <div class="tweet-content">
+                            <div class="tweet-header">
+                                <span class="tweet-author">Asmaa | أسماء</span>
+                                <span class="tweet-username">@ALadyInKuwait</span>
+                                <span class="tweet-timestamp">1h</span>
+                            </div>
+                            <div class="tweet-text">10.31 pm here. Before we bid the night farewell.</div>
+                            <div class="tweet-actions">
+                                <button class="tweet-action"><i class="far fa-comment"></i> 732</button>
+                                <button class="tweet-action"><i class="fas fa-retweet"></i> 682</button>
+                                <button class="tweet-action"><i class="far fa-heart"></i> 9,997</button>
+                                <button class="tweet-action"><i class="far fa-eye"></i> 2.9M</button>
+                                <button class="tweet-action"><i class="fas fa-share"></i></button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
-
-            <!-- Explore Section -->
+            <!-- Other sections (hidden by default, shown via bottom nav) -->
             <section id="explore-section" class="content-section">
-                <div class="section-header">
-                    <h2>Explore</h2>
-                </div>
                 <div class="trending-section">
                     <h3>Trending on Solana</h3>
                     <div class="trending-items">
@@ -104,12 +143,7 @@
                     </div>
                 </div>
             </section>
-
-            <!-- Notifications Section -->
             <section id="notifications-section" class="content-section">
-                <div class="section-header">
-                    <h2>Notifications</h2>
-                </div>
                 <div class="notifications-list">
                     <div class="empty-state">
                         <i class="fas fa-bell"></i>
@@ -118,14 +152,7 @@
                     </div>
                 </div>
             </section>
-
-            <!-- Profile Section -->
             <section id="profile-section" class="content-section">
-                <div class="section-header">
-                    <h2>Profile</h2>
-                </div>
-                
-                <!-- Wallet Info -->
                 <div class="wallet-info" id="wallet-info" style="display: none;">
                     <div class="wallet-card">
                         <div class="wallet-header">
@@ -135,7 +162,6 @@
                                 <p id="profile-username">@anonymous</p>
                             </div>
                         </div>
-                        
                         <div class="wallet-stats">
                             <div class="stat-item">
                                 <span class="stat-label">Address</span>
@@ -146,7 +172,6 @@
                                 <span id="wallet-balance" class="stat-value">0 SOL</span>
                             </div>
                         </div>
-                        
                         <div class="wallet-actions">
                             <button id="disconnect-wallet" class="btn btn-secondary">
                                 <i class="fas fa-sign-out-alt"></i>
@@ -155,8 +180,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Not Connected State -->
                 <div class="not-connected-state" id="not-connected-state">
                     <div class="empty-state">
                         <i class="fas fa-wallet"></i>
@@ -170,12 +193,10 @@
                 </div>
             </section>
         </main>
-
         <!-- Floating Action Button (FAB) -->
         <button class="fab" id="fab-compose" aria-label="Compose Tweet">
             <i class="fas fa-plus"></i>
         </button>
-
         <!-- Bottom Navigation -->
         <nav class="bottom-nav">
             <button class="nav-item active" data-section="feed-section" aria-label="Home">
@@ -192,7 +213,6 @@
             </button>
         </nav>
     </div>
-
     <!-- Loading Overlay -->
     <div id="loading-overlay" class="loading-overlay" style="display: none;">
         <div class="loading-spinner">
@@ -200,16 +220,12 @@
             <span>Processing transaction...</span>
         </div>
     </div>
-
     <!-- Toast Notifications -->
     <div id="toast-container" class="toast-container"></div>
-
     <!-- Scripts -->
     <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
     <script src="https://unpkg.com/@solana/wallet-adapter-base@latest/lib/index.iife.min.js"></script>
     <script src="https://unpkg.com/@solana/wallet-adapter-phantom@latest/lib/index.iife.min.js"></script>
-    
-    <!-- App Scripts -->
     <script src="js/utils/constants.js"></script>
     <script src="js/utils/helpers.js"></script>
     <script src="js/utils/storage.js"></script>
